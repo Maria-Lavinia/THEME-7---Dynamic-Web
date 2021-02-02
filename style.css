@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 html {
   scroll-behavior: smooth;
-  background-color: whitesmoke;
+  background-image: linear-gradient(to bottom right, #d3d3d3,#BFACAA);
 }
 .mainNav h1 {
   display: inline-block;
@@ -8,6 +12,8 @@ html {
   color: green;
   animation-name: glow;
   margin-right: auto;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 60px;
 }
 @keyframes glow {
   0%,
@@ -24,6 +30,61 @@ nav {
   font-size: larger;
   color: black;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+/* Dropdown button */
+.dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+ 
+}
+.dropdown{
+  display: inline-block;
+}
+
+.dropdown:hover .dropbtn {
+  text-decoration: underline;
+  color: #465902;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: inherit;
+  min-width: 80px;
+  z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 @media screen and (min-width: 700px) {
@@ -37,15 +98,18 @@ nav {
 h2 {
   font-size: 50px;
   color: green;
-  margin-left: 8px;
+  margin-left: 40px;
+  font-family: "Poppins", sans-serif;
+
 }
 .letterLinks ol {
   margin-top: 1rem;
   list-style-type: none;
   display: flex;
-  gap: 40px;
+  gap: 5px;
   font-size: 1.4rem;
   justify-content: flex-start;
+  font-family: "Poppins", sans-serif;
 }
 .letterLinks li a {
   text-decoration: none;
@@ -66,6 +130,7 @@ h2 {
   align-items: center;
   padding: 0.1rem;
   font-size: larger;
+  font-family: "Poppins", sans-serif;
 }
 .brandList a {
   text-decoration: none;
@@ -90,9 +155,95 @@ h2 {
 .brandList li:hover::after {
   transform: translateX(8px);
 }
-
+footer{
+  margin-right: 0;
+}
 @media screen and (min-width: 800px) {
   .brandList ol {
     column-count: 2;
   }
 }
+/*ProductList*/
+.productlist main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
+  gap: 2rem;
+  margin-left: 40px;
+
+}
+.productlist main h2 {
+  grid-column: 1/-1;
+  font-family: "Poppins", sans-serif;
+}
+.productlist article h3 {
+  font-size: 1rem;
+  flex-grow: 3;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+
+.subtle {
+  color: #465902
+}
+.productlist article {
+  display: flex;
+  flex-direction: column;
+
+}
+.productlist article.soldOut img {
+  opacity: 0.5;
+
+}
+.productlist article.soldOut::before {
+  content: "Sold Out";
+  position: absolute;
+  background: green;
+  color: var(--background-color);
+  padding:0.7%;
+  border: 2px solid green;
+  margin-left: 1px;
+  z-index: 3;
+  font-family: "Poppins", sans-serif;
+}
+.productlist article .discounted,
+.productlist article .price span {
+  display: none;
+  font-family: "Poppins", sans-serif;
+ 
+}
+
+.productlist article.onSale .discounted {
+  display: flex;
+  justify-content: space-between;
+}
+.discounted > p {
+  margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.productlist article.onSale .price span {
+  display: initial;
+  font-family: "Poppins", sans-serif;
+}
+.productlist article button {
+  margin-top: auto;
+}
+.productlist article {
+  margin-bottom: 1rem;
+}
+.discounted p:last-child {
+  background: #F20530;
+  padding: 0.2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+
+}
+a {
+  color: #465902;
+  font-family: "Poppins", sans-serif;
+
+}
+a :hover{
+  opacity: 50%;
+}
+
