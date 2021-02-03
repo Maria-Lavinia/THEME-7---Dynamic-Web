@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 html {
   scroll-behavior: smooth;
-  background-image: linear-gradient(to bottom right, #d3d3d3, #bfacaa);
+  background-image: linear-gradient(to bottom, #d3d3d3, #bfacaa);
 }
 .mainNav h1 {
   display: inline-block;
@@ -15,16 +14,48 @@ html {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 60px;
 }
-@keyframes glow {
-  0%,
-  100% {
-    filter: brightness(100%) drop-shadow(10px 10px 10px white);
-  }
 
-  50% {
-    filter: brightness(110%) drop-shadow(10px 10px 10 green);
-  }
+.list ol {
+  list-style-type: none;
+  text-align: center;
 }
+.list li {
+  border-bottom: 0.5px solid green;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.1rem;
+  font-size: larger;
+  font-family: "Poppins", sans-serif;
+}
+.list a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: black;
+}
+
+.list li::after {
+  display: block;
+  width: 20px;
+  height: 20px;
+  content: "";
+  transition: all 0.3s;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 14"><path fill="none" stroke="white" d="M.8 12.87l7.5-6-7.5-6"></path></svg>');
+  background-repeat: no-repeat;
+  /* url('data:image/svg+xml;utf8,<svg class="svg-arrowRight" viewBox="0 0 9 14"><path fill="none" stroke="#979797" d="M.8 12.87l7.5-6-7.5-6"></path></svg>'); */
+}
+.list li:hover {
+  background: #d8d8d8;
+  transition: transform 0.3s;
+}
+.list li:hover::after {
+  transform: translateX(8px);
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+}
+
 nav {
   display: inline-block;
   font-size: larger;
@@ -74,7 +105,7 @@ nav {
 }
 
 .dropdown-content a:hover {
-  background-color:green;
+  background-color: green;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
 }
@@ -90,13 +121,12 @@ nav {
     align-items: center;
   }
 }
-footer{
-  
+footer {
   display: flex;
   justify-content: space-between;
 }
 /*Category*/
- main {
+main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 600px));
   gap: 20px;
@@ -104,57 +134,55 @@ footer{
   margin-right: 60px;
 }
 .container {
-      position: relative;
-      width: 66.67%;
-      float: left;
-      align-items: center;
-    
-    }
+  position: relative;
+  width: 66.67%;
+  float: left;
+  align-items: center;
+}
 
-    .image {
-      opacity: 1;
-      display: block;
-      width: 100%;
-      height: 100%;
-      transition: 0.5s ease;
-      backface-visibility: hidden;
-      float: left;
-      align-items: center;
-    }
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  float: left;
+  align-items: center;
+}
 
-    .middle {
-      transition: 0.5s ease;
-      opacity: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-     
-    }
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-    .container:hover .image {
-      opacity: 0.3;
-    }
+.container:hover .image {
+  opacity: 0.3;
+}
 
-    .container:hover .middle {
-      opacity: 1;
-    }
+.container:hover .middle {
+  opacity: 1;
+}
 
-    .text {
-      background-color: green;
-      color: white;
-      font-size: 16px;
-      padding: 16px 32px;
-      font-family: "Poppins", sans-serif;
-    }
+.text {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  font-family: "Poppins", sans-serif;
+}
 
 /*ProductList*/
 .productlist main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
   gap: 2rem;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 .productlist main h2 {
   grid-column: 1/-1;
@@ -200,9 +228,7 @@ footer{
   justify-content: space-between;
 }
 
-
-
- p {
+p {
   margin-bottom: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -210,7 +236,7 @@ footer{
   display: initial;
   font-family: "Poppins", sans-serif;
 }
- 
+
 .discounted p:last-child {
   background: #f20530;
   padding: 0.2rem;
@@ -218,27 +244,56 @@ footer{
   font-size: 20px;
 }
 a {
-  color:white;
+  color: white;
   font-family: "Poppins", sans-serif;
- text-decoration: none;
-
+  text-decoration: none;
 }
 a :hover {
   opacity: 50%;
 }
-button{
-background-color: transparent;
+button {
+  background-color: green;
 }
-.price{
+.price {
   font-family: "Poppins", sans-serif;
 }
-
+.box1 {
+  width: 100px;
+  padding: 10px;
+  border: 3px solid green;
+  margin: 0;
+  text-decoration: none;
+  align-items: center;
+}
+.box2 {
+  width: 100px;
+  padding: 10px;
+  border: 3px solid green;
+  margin: 0;
+  text-decoration: none;
+  align-items: center;
+}
+.box3 {
+  width: 100px;
+  padding: 10px;
+  border: 3px solid green;
+  margin: 0;
+  text-decoration: none;
+  align-items: center;
+}
+.box4 {
+  width: 100px;
+  padding: 10px;
+  border: 3px solid green;
+  margin: 0;
+  text-decoration: none;
+  align-items: center;
+}
 /*Product*/
 .breadcrumbs {
   list-style-type: none;
   display: inline-flex;
   font-family: "Poppins", sans-serif;
-  color: black;
 }
 .breadcrumbs li::after {
   display: inline-block;
@@ -249,50 +304,32 @@ background-color: transparent;
   transition: all 0.3s;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 14"><path fill="none" stroke="white" d="M.8 12.87l7.5-6-7.5-6"></path></svg>');
   background-repeat: no-repeat;
-  /* url('data:image/svg+xml;utf8,<svg class="svg-arrowRight" viewBox="0 0 9 14"><path fill="none" stroke="#979797" d="M.8 12.87l7.5-6-7.5-6"></path></svg>'); */
-  color: black;
 }
+
 .breadcrumbs li:last-child::after {
   background: none;
-  color: black;
 }
 .purchaseBox {
-
   font-family: "Poppins", sans-serif;
-  order: 2;
-  margin-top: 400px;
-  margin-left: 638px;
-   position: absolute;
-font-size: 20px;
+  font-size: 20px;
   padding: 2rem;
+  position: absolute;
+  margin-top: 300px;
 }
 .info {
- 
   padding: 3rem;
-  order: 1;
   position: absolute;
-  margin-top: 185px;
-  margin-left: 638px;
   font-family: "Poppins", sans-serif;
   font-size: 40px;
- 
-
+  margin-top: 100px;
+  align-items: center;
 }
 .product select {
   min-width: 100px;
 }
-.product main {
-  display: grid;
-  grid-column: 1fr 1fr;
-}
-.product main .breadcrumbs,
-.product main img {
-  grid-column: 1/-1;
-}
+
 .purchaseBox form label {
   gap: 1rem;
-
-  
 }
 .purchaseBox button {
   display: block;
@@ -303,24 +340,86 @@ dt {
   font-weight: 700;
   text-align: center;
 }
-h1{
+h1 {
   font-family: "Poppins", sans-serif;
   color: green;
-
 }
 
-button{
+button {
   font-family: "Poppins", sans-serif;
   padding: 1rem;
   font-size: 20px;
-  color: green;
+  color: white;
+}
+.checked {
+  color: orange;
+  align-items: center;
+}
+section {
+  margin-top: 20px;
 }
 
+.first {
+  grid-area: sec1;
+}
 
+.second {
+  grid-area: sec2;
+}
+
+article {
+  display: grid;
+  grid-template-areas: "sec1 sec2";
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+figure {
+  width: 100%;
+  height: 100%;
+}
 @media screen and (min-width: 1000px) {
   .product main {
     grid-template-columns: 1fr 310px;
   }
-
 }
+@media only screen and (max-width: 768px) {
+  section {
+    margin-top: 20px;
+  }
 
+  article {
+    display: block;
+  }
+  .purchaseBox {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    padding: 2rem;
+    position: absolute;
+    margin-top: 300px;
+  }
+  .info {
+    padding: 3rem;
+    position: absolute;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 0;
+    align-items: center;
+  }
+  .breadcrumbs {
+    list-style-type: none;
+    display: inline;
+    font-family: "Poppins", sans-serif;
+  }
+  .breadcrumbs ol {
+    display: inline;
+  }
+  .breadcrumbs li::after {
+    display: inline-flex;
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+    content: "";
+    transition: all 0.3s;
+  }
+}

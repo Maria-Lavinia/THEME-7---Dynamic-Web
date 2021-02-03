@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
-  <body class="product">
+  <body>
     <header class="mainNav">
       <h1>FashionXpert</h1>
       <nav>
@@ -39,19 +43,30 @@
       </nav>
     </header>
     <main>
+
+      <article>
+        <section class="first">
       <ol class="breadcrumbs">
         <li><a href="category.html">Seasons</a></li>
         <li><a href="productlist.html">Fall Season</a></li>
+        
         <li>Black Fleece Jacket</li>
       </ol>
 
-      <h1>Fall Clothing - PUMA</h1>
-      <img
-        src="	https://kea-alt-del.dk/t7/images/webp/640/1528.webp"
-        alt="Black Fleece Jacket"
-      />
+ 
+      <figure><img
+        src="https://kea-alt-del.dk/t7/images/webp/640/1528.webp"
+        alt="Black Fleece Jacket" id="man"/> </figure>
+  </section>
+  <section class="second">
+      
+      <div class="info">
+        <dt>Black Fleece Jacket</dt>
+        <dd>959.51,- incl VAT</dd>
+      </div>
 
-      <section class="purchaseBox">
+
+      <div class="purchaseBox">
         <p>Jackets | PUMA</p>
         <form>
           <label
@@ -73,16 +88,22 @@
           <button>Add to basket</button>
         </form>
 
-        <button>Share your opinion</button>
+        <button>
+          Share your opinion <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </button>
+      </div>
       </section>
-      <section class="info">
-        <dt>Black Fleece Jacket</dt>
-        <dd>959.51,- incl VAT</dd>
-      </section>
+      </article>
     </main>
+
     <footer>
       <p>&copy;2021, FashionXpert</p>
-      <p><a href="https://kea-alt-del.dk/t7/api/sample">Sample Data</a></p>
+      <p><a href="https://www.kaggle.com/paramaggarwal/fashion-product-images-dataset">Data Source</a></p>
+      
     </footer>
   </body>
 </html>
