@@ -14,13 +14,15 @@ function handleProductList(data) {
 }
 
 function showProduct(product) {
-  console.log(product);
+  //console.log(product);
   //grab the template
+ 
   const template = document.querySelector("#smallProduct").content;
   //clone it
   const copy = template.cloneNode(true);
   //change content
   copy.querySelector("h3").textContent = product.productdisplayname;
+  copy.querySelector("a").href = `product.html?id=${product.id}`;
   if (product.soldout) {
     copy.querySelector("article").classList.add("soldOut");
   }
