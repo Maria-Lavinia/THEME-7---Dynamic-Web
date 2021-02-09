@@ -8,7 +8,7 @@
   </head>
   <body class="productlist">
     <header class="mainNav">
-      <h1>FashionXpert</h1>
+      <h1>FashionXpert</h1></a>
       <nav>
         <div class="dropdown">
           <div class="dropbtn">Seasons</div>
@@ -40,6 +40,8 @@
     </header>
     <main>
       <h2>FALL SEASON</h2>
+      <!--
+      
       <article class="smallProduct onSale">
         <img
           src="https://kea-alt-del.dk/t7/images/webp/1000/1528.webp"
@@ -55,6 +57,9 @@
         <a href="product.html">More Details</a>
         </div>
       </article>
+      
+    -->
+    <template id="smallProduct">
       <article class="smallProduct">
         <img
           src="https://kea-alt-del.dk/t7/images/webp/1000/1531.webp"
@@ -62,11 +67,16 @@
         />
         <h3>Grey Solid Round Neck T-Shirt</h3>
         <p class="price">DKK 799,-</p>
+        <div class="discounted">
+          <p>Now DKK 714.45,-</p>
+          <p>-55%</p>
+        </div>
         <div class="box2">
         <a href="product.html">More Details</a>
         </div>
       </article>
-
+      </template>
+<!--
       <article class="smallProduct soldOut">
         <img
           src="https://kea-alt-del.dk/t7/images/webp/1000/1529.webp"
@@ -98,5 +108,7 @@
       <p><a href="https://www.kaggle.com/paramaggarwal/fashion-product-images-dataset">Data Source</a></p>
       
     </footer>
+  -->
+    <script src="productlist.js"></script>
   </body>
 </html>

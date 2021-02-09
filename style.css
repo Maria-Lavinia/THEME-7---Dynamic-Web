@@ -5,16 +5,6 @@ html {
   scroll-behavior: smooth;
   background-image: linear-gradient(to bottom, #d3d3d3, #bfacaa);
 }
-.mainNav h1 {
-  display: inline-block;
-  margin-left: 30px;
-  color: green;
-  animation-name: glow;
-  margin-right: auto;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 60px;
-}
-
 .list ol {
   list-style-type: none;
   text-align: center;
@@ -27,6 +17,7 @@ html {
   padding: 0.1rem;
   font-size: larger;
   font-family: "Poppins", sans-serif;
+  margin-top: 100px;
 }
 .list a {
   text-decoration: none;
@@ -43,7 +34,7 @@ html {
   transition: all 0.3s;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 14"><path fill="none" stroke="white" d="M.8 12.87l7.5-6-7.5-6"></path></svg>');
   background-repeat: no-repeat;
-  /* url('data:image/svg+xml;utf8,<svg class="svg-arrowRight" viewBox="0 0 9 14"><path fill="none" stroke="#979797" d="M.8 12.87l7.5-6-7.5-6"></path></svg>'); */
+  
 }
 .list li:hover {
   background: #d8d8d8;
@@ -54,6 +45,7 @@ html {
 }
 h2 {
   font-family: "Poppins", sans-serif;
+
 }
 
 nav {
@@ -62,6 +54,7 @@ nav {
   color: black;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
+  
 }
 /* Dropdown button */
 .dropbtn {
@@ -69,7 +62,7 @@ nav {
   border: none;
   outline: none;
   color: black;
-  padding: 14px 16px;
+  padding: 8px 10px;
   background-color: inherit;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -119,6 +112,7 @@ nav {
   .mainNav {
     display: flex;
     align-items: center;
+  
   }
 }
 footer {
@@ -309,6 +303,7 @@ button {
 .breadcrumbs li:last-child::after {
   background: none;
 }
+
 .purchaseBox {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
@@ -340,9 +335,12 @@ dt {
   font-weight: 700;
   text-align: center;
 }
-h1 {
-  font-family: "Poppins", sans-serif;
-  color: green;
+header h1 {
+  background-image: url(Images/logo.svg);
+  background-repeat: no-repeat;
+  width: 580px;
+   height: 265px;
+  text-indent: -999999px;
 }
 
 button {
@@ -373,20 +371,26 @@ article {
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr;
 }
-figure {
-  width: 100%;
-  height: 100%;
-}
+
 @media screen and (min-width: 1000px) {
-  .product main {
+  article {
     grid-template-columns: 1fr 310px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 640px) {
   section {
     margin-top: 20px;
   }
-
+  header h1 {
+    background-image: url(Images/logo.svg);
+    position: absolute;
+    width: 80vw;
+    height: 60vw;
+    margin-top: 0;
+   background-size: 100%;
+    text-indent: -999999px;
+  }
+    
   article {
     display: block;
   }
@@ -394,15 +398,13 @@ figure {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     padding: 2rem;
-    position: absolute;
-    margin-top: 300px;
+    margin-top: 100px;
   }
   .info {
-    padding: 3rem;
-    position: absolute;
+    padding: 1rem;
     font-family: "Poppins", sans-serif;
-    font-size: 40px;
-    margin-top: 50px;
+    font-size: 30px;
+    margin-top: 4px;
     margin-left: 0;
     align-items: center;
   }
@@ -422,4 +424,64 @@ figure {
     content: "";
     transition: all 0.3s;
   }
+  .productimage{
+    width: 80%;
+    height: 80%;
+  
+  }
+  .dropbtn {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 8px 10px;
+    background-color: inherit;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+  }
+  .dropdown {
+    display: inline-block;
+    margin-top: 200px;
+    z-index: 5;
+  }
+  
+  .dropdown:hover .dropbtn {
+    text-decoration: underline;
+    color: #465902;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: inherit;
+    min-width: 80px;
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: green;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    z-index: 7;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 90;
+  }
+  
 }
