@@ -23,6 +23,7 @@ function showProduct(product) {
   //change content
   copy.querySelector("h3").textContent = product.productdisplayname;
   copy.querySelector("a").href = `product.html?id=${product.id}`;
+
   if (product.soldout) {
     copy.querySelector("article").classList.add("soldOut");
   }
@@ -34,6 +35,8 @@ function showProduct(product) {
     product.discount + "%";
   copy.querySelector(".discounted p").textContent =
     "Now " + product.price / product.discount;
+    copy.querySelector("img.productimage").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+    copy.querySelector("img.productimage").alt = product.productdisplayname;
 
   /*
 <article class="smallProduct">

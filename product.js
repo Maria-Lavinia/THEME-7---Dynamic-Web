@@ -3,8 +3,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 console.log("id");
 
-
-
 const url = "https://kea-alt-del.dk/t7/api/products/" + id;
 //fetch the data
 fetch(url)
@@ -21,5 +19,4 @@ function showProduct(product) {
     "img.productimage"
   ).src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
   document.querySelector("img.productimage").alt = product.productdisplayname;
- 
 }
