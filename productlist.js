@@ -1,4 +1,9 @@
-const url = "https://kea-alt-del.dk/t7/api/products";
+const urlParams = new URLSearchParams(window.location.search);
+
+const season = urlParams.get("season");
+console.log(season);
+document.querySelector("h2").textContent = season + " Season";
+const url = "https://kea-alt-del.dk/t7/api/products?season=" + season;
 
 fetch(url)
   .then(function (res) {
@@ -16,7 +21,7 @@ function handleProductList(data) {
 function showProduct(product) {
   //console.log(product);
   //grab the template
- 
+
   const template = document.querySelector("#smallProduct").content;
   //clone it
   const copy = template.cloneNode(true);
@@ -34,23 +39,14 @@ function showProduct(product) {
   copy.querySelector(".discounted p:nth-child(2)").textContent =
     product.discount + "%";
   copy.querySelector(".discounted p").textContent =
-    "Now " + product.price / product.discount;
-    copy.querySelector("img.productimage").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
-    copy.querySelector("img.productimage").alt = product.productdisplayname;
+    "Now " +
+    Math.round((product.price / 100) * product.discount * 100) / 100 +
+    " ,-";
+  copy.querySelector(
+    "img.productimage"
+  ).src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+  copy.querySelector("img.productimage").alt = product.productdisplayname;
 
-  /*
-<article class="smallProduct">
-        <img
-          src="https://kea-alt-del.dk/t7/images/webp/1000/1531.webp"
-          alt="Grey Solid Round Neck T-Shirt"
-        />
-        <h3>Grey Solid Round Neck T-Shirt</h3>
-        <p class="price">DKK 799,-</p>
-        <div class="box2">
-        <a href="product.html">More Details</a>
-        </div>
-      </article>
-*/
   //find the daddy
   const parent = document.querySelector("main");
   //append it
