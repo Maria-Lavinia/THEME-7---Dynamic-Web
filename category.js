@@ -13,7 +13,6 @@ function getData(data) {
 function showSeason(season) {
   const template = document.querySelector("template").content;
   const copy = template.cloneNode(true);
-  console.log(`Images/${season.season}.jpeg`);
   copy.querySelector("img").src = `Images/${season.season}.jpeg`;
   copy.querySelector("a").href = `productlist.html?season=${season.season}`;
   const parent = document.querySelector("main");

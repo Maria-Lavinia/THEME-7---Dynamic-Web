@@ -24,5 +24,14 @@ function showProduct(product) {
     product.price + ",-" + " incl VAT";
   document.querySelector(".purchaseBox p").textContent =
     product.articletype + " | " + product.brandname;
-  //document.querySelector(".info p:nth-child(3)").textContent = product.description;
+    document.querySelector(".discounted p").textContent =
+    "Now " + "ONLY " +
+    Math.round((product.price / 100) * product.discount * 100) / 100 +
+    " ,-" + " incl VAT";
+if (product.soldout) {
+  document.querySelector("article").classList.add("soldOut");
+}
+if (product.discount) {
+  document.querySelector("article").classList.add("onSale");
+}
 }

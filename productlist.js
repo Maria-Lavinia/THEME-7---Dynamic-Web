@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 
 const season = urlParams.get("season");
-console.log(season);
+
 document.querySelector("h2").textContent = season + " Season";
 const url = "https://kea-alt-del.dk/t7/api/products?season=" + season;
 
