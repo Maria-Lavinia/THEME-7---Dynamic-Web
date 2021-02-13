@@ -35,7 +35,7 @@ function showProduct(product) {
   if (product.discount) {
     copy.querySelector("article").classList.add("onSale");
   }
-  copy.querySelector(".price").textContent = "DKK " + product.price + " ,-";
+  copy.querySelector(".price").textContent = product.price + " DKK";
   copy.querySelector(".discounted p:nth-child(2)").textContent =
     product.discount + "%";
   copy.querySelector(".discounted p").textContent =

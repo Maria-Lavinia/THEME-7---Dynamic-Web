@@ -24,14 +24,24 @@ function showProduct(product) {
     product.price + ",-" + " incl VAT";
   document.querySelector(".purchaseBox p").textContent =
     product.articletype + " | " + product.brandname;
+  //show the correct price
+
+  document.querySelector(".discounted").classList.add("hidden");
+  document.querySelector(".soldout").classList.add("hidden");
+
+  if (product.soldout) {
+    document.querySelector("article").classList.add("soldout");
+    document.querySelector(".soldout").classList.remove("soloOut");
+  }
+
+  if (product.discount) {
+    document.querySelector("article").classList.add("onSale");
+    document.querySelector(".discounted").classList.remove("hidden");
     document.querySelector(".discounted p").textContent =
-    "Now " + "ONLY " +
-    Math.round((product.price / 100) * product.discount * 100) / 100 +
-    " ,-" + " incl VAT";
-if (product.soldout) {
-  document.querySelector("article").classList.add("soldOut");
-}
-if (product.discount) {
-  document.querySelector("article").classList.add("onSale");
-}
+      "Now " +
+      "ONLY " +
+      Math.round((product.price / 100) * product.discount * 100) / 100 +
+      " ,-" +
+      " incl VAT";
+  }
 }
